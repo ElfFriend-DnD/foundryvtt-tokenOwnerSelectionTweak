@@ -44,6 +44,13 @@ Hooks.once('setup', function() {
 /* ------------------------------------ */
 Hooks.once('ready', function() {
 	// Do anything once the module is ready
+
+		
+	Hooks.on('createToken', (...args) => {
+		console.log('token created', args)
+	});
+
+	Hooks.on('controlToken', () => {});
 });
 
 // Add any additional hooks if necessary
