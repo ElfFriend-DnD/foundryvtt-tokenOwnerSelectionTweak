@@ -1,33 +1,21 @@
 {
-  "name": "foundryvtt-tokenOwnerSelectionTweak",
-  "title": "foundryvtt-tokenOwnerSelectionTweak",
-  "description": "",
-  "systems": [],
+  "name": "token-owner-selection-tweak",
+  "title": "Token Owner Selection Tweak",
+  "description": "Prevents player vision from changing if a new token they are the owner of is created.",
   "version": "0.1.0",
-  "author": "",
-  "authors": [
-    {
-      "name": "",
-      "email": "",
-      "url": ""
-    }
-  ],
-  "scripts": [],
+  "author": "Andrew Krigline (akrigline)",
   "esmodules": [
     "foundryvtt-tokenOwnerSelectionTweak.js"
   ],
   "styles": [
     "foundryvtt-tokenOwnerSelectionTweak.css"
   ],
-  "packs": [],
-  "languages": [],
-  "minimumCoreVersion": "0.5.0",
-  "compatibleCoreVersion": "0.5.0",
-  "url": "",
-  "manifest": "",
-  "download": "",
-  "license": "",
-  "readme": "",
-  "bugs": "",
+  "minimumCoreVersion": "0.6.6",
+  "compatibleCoreVersion": "0.6.6",
+  "url": "https://github.com/ElfFriend-DnD/foundryvtt-tokenOwnerSelectionTweak",
+  "manifest": "https://raw.githubusercontent.com/ElfFriend-DnD/foundryvtt-tokenOwnerSelectionTweak/master/dist/module.json",
+  "download": "https://raw.githubusercontent.com/ElfFriend-DnD/foundryvtt-tokenOwnerSelectionTweak/master/package/strongholds-and-followers-v0.1.0.zip",
+  "readme": "https://raw.githubusercontent.com/ElfFriend-DnD/foundryvtt-tokenOwnerSelectionTweak/master/README.md",
+  "bugs": "https://github.com/ElfFriend-DnD/foundryvtt-tokenOwnerSelectionTweak/issues",
   "changelog": ""
 }

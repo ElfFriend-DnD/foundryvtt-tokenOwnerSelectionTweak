@@ -1,1 +1,1 @@
-export const MODULE_ID = "token-owner-selection-tweaks";
+export const MODULE_ID = "token-owner-selection-tweak";

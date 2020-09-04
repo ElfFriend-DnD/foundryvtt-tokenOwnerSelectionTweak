@@ -13,12 +13,15 @@
 // Import TypeScript modules
 import { registerSettings } from './module/settings.js';
 import { preloadTemplates } from './module/preloadTemplates.js';
+import {log} from './helpers'
+import {libWrapper} from './shim.js';
+import { MODULE_ID } from './constants.js';
 
 /* ------------------------------------ */
 /* Initialize module					*/
 /* ------------------------------------ */
 Hooks.once('init', async function() {
-	console.log('foundryvtt-tokenOwnerSelectionTweak | Initializing foundryvtt-tokenOwnerSelectionTweak');
+	console.log('token-owner-selection-tweak | Initializing token-owner-selection-tweak');
 
 	// Assign custom classes and constants here
 	
@@ -45,12 +48,21 @@ Hooks.once('setup', function() {
 Hooks.once('ready', function() {
 	// Do anything once the module is ready
 
-		
-	Hooks.on('createToken', (...args) => {
-		console.log('token created', args)
+	Hooks.on('createToken', (scene: Scene, token: Token, options: any) => {
+		log('token created', token.owner)
 	});
 
-	Hooks.on('controlToken', () => {});
+
+	Hooks.on('controlToken', (token: Token, isControlled: boolean) => {
+		log('token controled', token.owner)
+	});
+
+	libWrapper.register(MODULE_ID, 'TokenLayer.dropActor', (dropActor, ...args) => {
+		log('dropActor called', args);
+
+		dropActor();
+	});
+
 });
 
 // Add any additional hooks if necessary
