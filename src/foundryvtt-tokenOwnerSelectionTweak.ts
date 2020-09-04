@@ -16,53 +16,38 @@ import { preloadTemplates } from './module/preloadTemplates.js';
 import {log} from './helpers'
 import {libWrapper} from './shim.js';
 import { MODULE_ID } from './constants.js';
+import { MySettings } from './enums.js';
 
 /* ------------------------------------ */
 /* Initialize module					*/
 /* ------------------------------------ */
 Hooks.once('init', async function() {
-	console.log('token-owner-selection-tweak | Initializing token-owner-selection-tweak');
+	log(`Initializing ${MODULE_ID}`);
 
-	// Assign custom classes and constants here
-	
 	// Register custom module settings
 	registerSettings();
-	
-	// Preload Handlebars templates
-	await preloadTemplates();
-
-	// Register custom sheets (if any)
-});
-
-/* ------------------------------------ */
-/* Setup module							*/
-/* ------------------------------------ */
-Hooks.once('setup', function() {
-	// Do anything after initialization but before
-	// ready
 });
 
 /* ------------------------------------ */
 /* When ready							*/
 /* ------------------------------------ */
 Hooks.once('ready', function() {
-	// Do anything once the module is ready
+	libWrapper.register(MODULE_ID, 'Token.prototype._onCreate', async (_onCreate, ...args) => {
+		log('_onCreate called', {args, users: game.users});
 
-	Hooks.on('createToken', (scene: Scene, token: Token, options: any) => {
-		log('token created', token.owner)
+		if (game.settings.get(MODULE_ID, MySettings.preserve)) {
+			log('setting set, doing the thing');
+
+			// Initialize Tokens on the Sight Layer if the Token could be a vision source or emits light
+	canvas.sight.initializeTokens();
+	canvas.lighting.update();
+
+		} else {
+			log('setting not set, doing the default');
+
+			_onCreate(...args);
+		}
 	});
-
-
-	Hooks.on('controlToken', (token: Token, isControlled: boolean) => {
-		log('token controled', token.owner)
-	});
-
-	libWrapper.register(MODULE_ID, 'TokenLayer.dropActor', (dropActor, ...args) => {
-		log('dropActor called', args);
-
-		dropActor();
-	});
-
 });
 
 // Add any additional hooks if necessary
