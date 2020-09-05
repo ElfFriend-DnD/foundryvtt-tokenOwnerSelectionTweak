@@ -1,11 +1,5 @@
-import {MODULE_ID} from '../constants';
-import {MySettings} from '../enums';
-
-const resetSight = function() {
-	// Re-initialize all tokens in the scene
-	// TODO: Only re-initialize the controlled tokens?
-	canvas.sight.initializeTokens();
-};
+import { MODULE_ID, MySettings } from '../constants';
+import { resetSight } from '../helpers';
 
 export const registerSettings = function() {
 	game.settings.register(MODULE_ID, MySettings.preserve, {

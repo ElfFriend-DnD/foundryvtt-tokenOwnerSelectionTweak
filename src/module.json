@@ -17,5 +17,12 @@
   "download": "https://raw.githubusercontent.com/ElfFriend-DnD/foundryvtt-tokenOwnerSelectionTweak/master/package/strongholds-and-followers-v0.1.0.zip",
   "readme": "https://raw.githubusercontent.com/ElfFriend-DnD/foundryvtt-tokenOwnerSelectionTweak/master/README.md",
   "bugs": "https://github.com/ElfFriend-DnD/foundryvtt-tokenOwnerSelectionTweak/issues",
-  "changelog": ""
+  "changelog": "",
+  "dependencies": [
+    {
+      "name": "lib-wrapper",
+      "manifest": "https://github.com/ruipin/fvtt-lib-wrapper/releases/download/v1.0.2/module.json",
+      "version": "1.0.2"
+    }
+  ]
 }

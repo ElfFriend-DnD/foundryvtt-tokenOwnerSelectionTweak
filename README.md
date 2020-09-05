@@ -6,6 +6,12 @@ This creates confusion as the players try to realize why the whole map just went
 
 ## Solution
 
-Two solutions are presented:
-1. Allow vision based on all owned character tokens while any are selected.
-2. Do not modify player selections when a new token is created that they own.
+> Do not modify player selections when a new token is created that they own.
+
+## Future plans
+Allow for two possible solutions (module options) with the other being:
+> Allow vision based on all owned character tokens while any are selected.
+
+## Acknowledgements
+
+Bootstrapped with Nick East's [create-foundry-project](https://gitlab.com/foundry-projects/foundry-pc/create-foundry-project).
