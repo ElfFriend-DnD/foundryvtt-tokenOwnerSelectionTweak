@@ -307,57 +307,6 @@ async function linkUserData() {
 /*********************/
 
 /**
- * Package build
- */
-async function packageBuild() {
-	const manifest = getManifest();
-
-	return new Promise((resolve, reject) => {
-		try {
-			// Remove the package dir without doing anything else
-			if (argv.clean || argv.c) {
-				console.log(chalk.yellow('Removing all packaged files'));
-				fs.removeSync('package');
-				return;
-			}
-
-			// Ensure there is a directory to hold all the packaged versions
-			fs.ensureDirSync('package');
-
-			// Initialize the zip file
-			const zipName = `${manifest.file.name}-v${manifest.file.version}.zip`;
-			const zipFile = fs.createWriteStream(path.join('package', zipName));
-			const zip = archiver('zip', { zlib: { level: 9 } });
-
-			zipFile.on('close', () => {
-				console.log(chalk.green(zip.pointer() + ' total bytes'));
-				console.log(
-					chalk.green(`Zip file ${zipName} has been written`)
-				);
-				return resolve();
-			});
-
-			zip.on('error', (err) => {
-				throw err;
-			});
-
-			zip.pipe(zipFile);
-
-			// Add the directory with the final code
-			zip.directory('dist/', manifest.file.name);
-
-			zip.finalize();
-		} catch (err) {
-			return reject(err);
-		}
-	});
-}
-
-/*********************/
-/*		PACKAGE		 */
-/*********************/
-
-/**
  * Update version and URLs in the manifest JSON
  */
 function updateManifest(cb) {
@@ -437,11 +386,9 @@ function updateManifest(cb) {
 
 		/* Update URLs */
 
-		const result = `${rawURL}/v${manifest.file.version}/package/${manifest.file.name}-v${manifest.file.version}.zip`;
-
 		manifest.file.url = repoURL;
-		manifest.file.manifest = `${rawURL}/master/${manifestRoot}/${manifest.name}`;
-		manifest.file.download = result;
+		manifest.file.manifest = `${repoURL}/releases/latest/module.json`;
+		manifest.file.download = `${repoURL}/releases/latest/module.zip`;
 
 		const prettyProjectJson = stringify(manifest.file, {
 			maxLength: 35,
@@ -460,10 +407,6 @@ function updateManifest(cb) {
 		cb(err);
 	}
 }
-
-// function gitAdd() {
-// 	return gulp.src('package').pipe(git.add({ args: '--no-all' }));
-// }
 
 function gitCommit() {
 	return gulp.src('./*').pipe(
@@ -497,12 +440,8 @@ exports.build = gulp.series(clean, execBuild);
 exports.watch = buildWatch;
 exports.clean = clean;
 exports.link = linkUserData;
-exports.package = packageBuild;
 exports.update = updateManifest;
 exports.publish = gulp.series(
-	// clean,
 	updateManifest,
-	// execBuild,
-	// packageBuild, // we want to use github actions for our packaging
 	execGit
 );

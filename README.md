@@ -8,6 +8,14 @@ This creates confusion as the players try to realize why the whole map just went
 
 > Do not modify player selections when a new token is created that they own.
 
+## Installation
+
+Module json: 
+
+```
+https://github.com/ElfFriend-DnD/foundryvtt-tokenOwnerSelectionTweak/releases/latest/download/module.json
+```
+
 ## Future plans
 Allow for two possible solutions (module options) with the other being:
 > Allow vision based on all owned character tokens while any are selected.
