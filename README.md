@@ -34,3 +34,5 @@ Allow for two possible solutions (module options) with the other being:
 ## Acknowledgements
 
 Bootstrapped with Nick East's [create-foundry-project](https://gitlab.com/foundry-projects/foundry-pc/create-foundry-project).
+
+Mad props to the [League of Extraordinary FoundryVTT Developers](https://forums.forge-vtt.com/c/package-development/11) community which helped me figure out a lot.
