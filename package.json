@@ -1,11 +1,11 @@
 {
 	"private": true,
 	"name": "foundryvtt-tokenOwnerSelectionTweak",
-	"version": "0.0.1",
+	"version": "0.1.0",
 	"description": "",
 	"scripts": {
 		"publish": "gulp publish",
-		"build": "gulp build && gulp link",
+		"build": "gulp build",
 		"build:watch": "gulp watch",
 		"clean": "gulp clean && gulp link --clean",
 		"update": "npm install --save-dev gitlab:foundry-projects/foundry-pc/foundry-pc-types"
