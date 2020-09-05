@@ -387,8 +387,8 @@ function updateManifest(cb) {
 		/* Update URLs */
 
 		manifest.file.url = repoURL;
-		manifest.file.manifest = `${repoURL}/releases/latest/module.json`;
-		manifest.file.download = `${repoURL}/releases/latest/module.zip`;
+		manifest.file.manifest = `${repoURL}/releases/latest/download/module.json`;
+		manifest.file.download = `${repoURL}/releases/latest/download/module.zip`;
 
 		const prettyProjectJson = stringify(manifest.file, {
 			maxLength: 35,
