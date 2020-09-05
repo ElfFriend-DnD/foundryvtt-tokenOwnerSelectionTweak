@@ -2,7 +2,7 @@
 	"name": "token-owner-selection-tweak",
 	"title": "Token Owner Selection Tweak",
 	"description": "Prevents player vision from changing if a new token they are the owner of is created.",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"author": "Andrew Krigline (akrigline)",
 	"esmodules": [
 		"foundryvtt-tokenOwnerSelectionTweak.js"
@@ -14,7 +14,7 @@
 	"compatibleCoreVersion": "0.6.6",
 	"url": "https://github.com/ElfFriend-DnD/foundryvtt-tokenOwnerSelectionTweak",
 	"manifest": "https://raw.githubusercontent.com/ElfFriend-DnD/foundryvtt-tokenOwnerSelectionTweak/master/src/module.json",
-	"download": "https://raw.githubusercontent.com/ElfFriend-DnD/foundryvtt-tokenOwnerSelectionTweak/v0.1.0/package/token-owner-selection-tweak-v0.1.0.zip",
+	"download": "https://raw.githubusercontent.com/ElfFriend-DnD/foundryvtt-tokenOwnerSelectionTweak/v0.1.1/package/token-owner-selection-tweak-v0.1.1.zip",
 	"readme": "https://raw.githubusercontent.com/ElfFriend-DnD/foundryvtt-tokenOwnerSelectionTweak/master/README.md",
 	"bugs": "https://github.com/ElfFriend-DnD/foundryvtt-tokenOwnerSelectionTweak/issues",
 	"changelog": "",
