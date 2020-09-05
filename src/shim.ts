@@ -54,6 +54,7 @@ Hooks.once('init', () => {
 	if(WARN_FALLBACK) {
 		//************** USER CUSTOMIZABLE:
 		// Module ID - by default attempts to auto-detect, but you might want to hardcode your module ID here to avoid potential auto-detect issues
+		//@ts-ignore
 		const MODULE_ID = ((import.meta?.url ?? Error().stack)?.match(/(?<=\/)modules\/.+(?=\/)/i)??[])[0]?.split('/')?.find(n => n && game.modules.has(n));
 		if(!MODULE_ID) {
 			console.error("libWrapper Shim: Could not auto-detect module ID. The libWrapper fallback warning dialog will be disabled.");
