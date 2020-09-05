@@ -4,6 +4,12 @@ This is a tiny tweak aimed at solving a single inconvenience. If you're the kind
 
 This creates confusion as the players try to realize why the whole map just went dark and it would be easier to not have to repeat "deselect whatever token you have selected."
 
+### Foundry Default Behavior
+![Foundry Default Behavior Gif](without-tweak.gif)
+
+### With this module's tweak
+![Token Owner Selection Tweak Gif](with-tweak.gif)
+
 ## Solution
 
 > Do not modify player selections when a new token is created that they own.
@@ -15,6 +21,9 @@ Module json:
 ```
 https://github.com/ElfFriend-DnD/foundryvtt-tokenOwnerSelectionTweak/releases/latest/download/module.json
 ```
+
+Once installed and activated, there is a setting under Module Settings:
+![Preserve token owner selection setting](moduleSetting.png)
 
 ## Future plans
 Allow for two possible solutions (module options) with the other being:

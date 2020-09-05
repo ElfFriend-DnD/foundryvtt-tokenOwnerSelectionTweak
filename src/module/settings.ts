@@ -3,8 +3,8 @@ import { resetSight } from '../helpers';
 
 export const registerSettings = function() {
 	game.settings.register(MODULE_ID, MySettings.preserve, {
-		name: 'Preserve owner selection on token creation',
-		default: 0,
+		name: 'Preserve token owner selection',
+		default: true,
 		type: Boolean,
 		scope: 'world',
 		config: true,
