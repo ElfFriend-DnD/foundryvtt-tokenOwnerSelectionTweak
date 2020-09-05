@@ -23,7 +23,7 @@ https://github.com/ElfFriend-DnD/foundryvtt-tokenOwnerSelectionTweak/releases/la
 ```
 
 Once installed and activated, there is a setting under Module Settings:
-![Preserve token owner selection setting](moduleSetting.png)
+![Preserve token owner selection setting](moduleSetting.PNG)
 
 ## Future plans
 Allow for two possible solutions (module options) with the other being:
