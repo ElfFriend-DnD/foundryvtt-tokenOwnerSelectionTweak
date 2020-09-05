@@ -461,13 +461,13 @@ function updateManifest(cb) {
 	}
 }
 
-function gitAdd() {
-	return gulp.src('package').pipe(git.add({ args: '--no-all' }));
-}
+// function gitAdd() {
+// 	return gulp.src('package').pipe(git.add({ args: '--no-all' }));
+// }
 
 function gitCommit() {
 	return gulp.src('./*').pipe(
-		git.commit(`v${getManifest().file.version}`, {
+		git.commit(`version bump v${getManifest().file.version}`, {
 			args: '-a',
 			disableAppendPaths: true,
 		})
@@ -485,7 +485,11 @@ function gitTag() {
 	);
 }
 
-const execGit = gulp.series(gitAdd, gitCommit, gitTag);
+const execGit = gulp.series(
+	//gitAdd,
+	gitCommit,
+	gitTag
+);
 
 const execBuild = gulp.parallel(buildTS, buildLess, buildSASS, copyFiles);
 
@@ -496,9 +500,9 @@ exports.link = linkUserData;
 exports.package = packageBuild;
 exports.update = updateManifest;
 exports.publish = gulp.series(
-	clean,
+	// clean,
 	updateManifest,
-	execBuild,
-	packageBuild,
+	// execBuild,
+	// packageBuild, // we want to use github actions for our packaging
 	execGit
 );
