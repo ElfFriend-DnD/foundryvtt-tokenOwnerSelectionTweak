@@ -45,7 +45,7 @@ jobs:
         prerelease: false
         token: ${{ secrets.GITHUB_TOKEN }}
         artifacts: './dist/module.json,./dist/module.zip'
-        tag: ${{ steps.get-version.outputs.version }}
+        tag_name: ${{ github.ref }}
 
     # Update the 'latest' release
     - name: Create Release
