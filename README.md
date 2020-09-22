@@ -26,14 +26,8 @@ Module json:
 https://github.com/ElfFriend-DnD/foundryvtt-tokenOwnerSelectionTweak/releases/latest/download/module.json
 ```
 
-Once installed and activated, there is a setting under Module Settings:
+Once installed and activated, there is a setting under Module Settings (Client Scope so individuals can turn this off):
 ![Preserve token owner selection setting](moduleSetting.PNG)
-
-## Future plans
-
-Allow for two possible solutions (module options) with the other being:
-
-> Allow vision based on all owned character tokens while any are selected.
 
 ## Acknowledgements
 
