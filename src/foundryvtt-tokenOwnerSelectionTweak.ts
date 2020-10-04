@@ -22,15 +22,28 @@ async function _onCreateOverride(_onCreate, ...args) {
 /* Initialize module					*/
 /* ------------------------------------ */
 Hooks.once('init', async function () {
-  log(`Initializing ${MODULE_ID}`);
+  if (isNewerVersion(game.data.version, '0.7.0')) {
+    // do nothing
+    console.warn(
+      'token-owner-selection-tweak |',
+      'This module is not necessary as of 0.7.1 which implemented changes in token vision to render it uncessary.'
+    );
+  } else {
+    log(`Initializing ${MODULE_ID}`);
 
-  // Register custom module settings
-  registerSettings();
+    // Register custom module settings
+    registerSettings();
+  }
 });
 
 /* ------------------------------------ */
 /* When ready							*/
 /* ------------------------------------ */
 Hooks.once('ready', function () {
-  libWrapper.register(MODULE_ID, 'Token.prototype._onCreate', _onCreateOverride);
+  if (isNewerVersion(game.data.version, '0.7.0')) {
+    // do nothing
+    return;
+  } else {
+    libWrapper.register(MODULE_ID, 'Token.prototype._onCreate', _onCreateOverride);
+  }
 });

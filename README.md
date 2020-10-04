@@ -1,3 +1,12 @@
+
+## Deprecation Warning
+
+As of [0.7.1](https://foundryvtt.com/releases/0.7.1) this module is unecessary on account of this change:
+> When a player controls a Token that does not have vision itself, their vision will now be unified with other observed tokens. This will work better for summons or familiars where the user does not benefit from the Token's perspective.
+
+Installing it or activating it won't break your game but will put a warning in the console.
+
+
 # Token Owner Selection Tweak
 
 ![Latest Release Download Count](https://img.shields.io/badge/dynamic/json?label=Downloads@latest&query=assets%5B1%5D.download_count&url=https%3A%2F%2Fapi.github.com%2Frepos%2FElfFriend-DnD%2Ffoundryvtt-tokenOwnerSelectionTweak%2Freleases%2Flatest)
