@@ -6,6 +6,7 @@ As of [0.7.1](https://foundryvtt.com/releases/0.7.1) this module is unecessary o
 
 Installing it or activating it won't break your game but will put a warning in the console.
 
+I will not be supporting this module after this last stable version.
 
 # Token Owner Selection Tweak
 
