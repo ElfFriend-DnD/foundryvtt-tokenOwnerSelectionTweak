@@ -2,7 +2,7 @@
 	"name": "token-owner-selection-tweak",
 	"title": "Token Owner Selection Tweak",
 	"description": "Prevents player vision from changing if a new token they are the owner of is created.",
-	"version": "0.1.9",
+	"version": "0.2.0",
 	"author": "Andrew Krigline (akrigline)",
 	"esmodules": [
 		"foundryvtt-tokenOwnerSelectionTweak.js"
